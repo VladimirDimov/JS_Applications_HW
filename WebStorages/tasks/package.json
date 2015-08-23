@@ -1,0 +1,12 @@
+{
+  "name": "task-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "System": "jspm_packages/system.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
