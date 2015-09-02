@@ -1,0 +1,9 @@
+<a href="#/threads/add" class="btn-primary">Add</a>
+
+{{#each this}}
+	<h1>{{title}}</h1>
+	<h2>{{id}}</h2>
+	{{#messages}}
+		{{this}}
+	{{/messages}}
+{{/each}}

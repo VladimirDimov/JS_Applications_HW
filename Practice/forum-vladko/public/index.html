@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: Simple Forum with Sammy.js, jQuery and Handlebars</title>
+  <script src="./bower_components/jquery/dist/jquery.js"></script>
+  <script src="./bower_components/sammy/lib/sammy.js"></script>
+  <script src="./bower_components/handlebars/handlebars.js"></script>
+  <script src="./js/templates.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./bower_components\sha1\index.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <header>
+      <a href="#/login" id="btn-go-to-login">Login/Register</a>
+      <a href="./" id="btn-logout">Logout</a>
+    </header>
+    <div id="content">
+
+    </div>
+  </div>
+
+
+  <script>
+    var sammyApp = Sammy('#content', function(){
+    var $content = $('#content');
+    
+    this.get('#/', function(context) {
+      $('#content').html('Home page');
+      
+      if(localStorage.getItem('CURRENT_USERNAME')){
+        $('#btn-go-to-login').hide();
+        $('#btn-logout').show();
+      } else {
+        $('#btn-go-to-login').show();
+        $('#btn-logout').hide();
+      }
+      
+      $('#btn-logout').click(function(){
+      data.users.logout()
+        .then(function(res){
+          console.log('User log out');
+          context.redirect('#/');
+        });
+      });
+      
+      context.redirect('#/threads');
+    });   
+    
+    this.get('#/threads', function(context) {
+      var threads;
+      data.threads.get()
+        .then(function(res){
+          threads = res.result;
+          return templates.get('threads');           
+        })
+         .then(function(template){
+              $('#content').html(template(threads));
+         });
+    });
+    
+    this.get('#/login', function(context){
+      if(localStorage.getItem('CURRENT_USERNAME')) {
+        return; 
+      }
+      
+      console.log('loading login...');
+      templates.get('login')
+        .then(function(template) {
+          $content.html(template());
+          
+          $('#btn-register').click(function(){
+            var passSHA1 = CryptoJS.SHA1($('#tb-password').val());
+            
+            var user = {
+              username: $('#tb-username').val(),
+              passHash: passSHA1.toString()
+            }
+            
+            data.users.register(user)
+              .then(function(user) {
+                console.log(user);
+                context.redirect('#/');                
+              });
+          });
+          
+          $('#btn-login').click(function(){
+            var passSHA1 = CryptoJS.SHA1($('#tb-password').val());
+            
+            var user = {
+              username: $('#tb-username').val(),
+              passHash: passSHA1.toString()
+            }
+            
+            data.users.login(user)
+              .then(function(user) {
+                console.log(user);
+                context.redirect('#/');
+              });
+          });
+        });
+    });
+    
+    this.get('#/threads/add', function(context) {
+      templates.get('thread-add')
+        .then(function(template) {
+          $('#content').html(template());
+          
+          $('#btn-add-thread').on('click', function(){
+            var threadToAdd = {
+              title: $('#thread-title').val()
+            }
+            data.threads.add(threadToAdd)
+              .then(function() {
+                context.redirect('#/threads');
+              })
+          });
+        });
+    });
+  });
+  
+  $(function(){
+    sammyApp.run('#/');
+  })
+  </script>
+</body>
+
+</html>
