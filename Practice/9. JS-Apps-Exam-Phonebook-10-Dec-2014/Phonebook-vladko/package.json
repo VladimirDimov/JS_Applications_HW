@@ -1,0 +1,15 @@
+{
+  "name": "Phonebook-vladko",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "sammy": "^0.7.6"
+  }
+}

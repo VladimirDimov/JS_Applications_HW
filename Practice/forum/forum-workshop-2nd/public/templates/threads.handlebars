@@ -1,0 +1,12 @@
+<h1>Threads</h1>
+<div id="threads-container">
+	<hr>
+	{{#each this}}
+		<div class="thread-box">
+			<h2>{{title}}</h2>
+			<h3>{{id}}</h3>					
+			<h3>Posted by: {{user.username}} with id: {{user.id}}</h3>		
+			<h3>Posted on: {{postDate}}</h3>	
+		</div>
+	{{/each}}
+</div>

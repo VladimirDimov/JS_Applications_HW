@@ -1,0 +1,12 @@
+<h1>-------Home-------</h1>
+<h2>Wellcome to the simple forum!</h2>
+<div id="users">
+	<a href="#/threads">Threads</a>
+	<h3>List of users:</h3>
+	{{#each this}}
+	<div class="user-container">
+		<strong>{{id}}</strong>
+		<span>{{username}}</span>
+	</div>
+	{{/each}}
+</div>
