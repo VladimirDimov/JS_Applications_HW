@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: Simple Forum with Sammy.js, jQuery and Handlebars</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="./node_modules/systemjs/dist/system.js"></script>
+</head>
+<body>
+<script>
+  System.config({
+    transpiler: 'babel',
+    map: {
+      babel: './node_modules/babel-core/browser.js'
+    }
+  });
+  
+  System.import('./js/app.js');
+</script>
+<header>
+  <a href="#/home">Home</a>
+  <a href="#/register">Register</a>
+  <a href="#/login">Login</a>
+</header>
+<div id="wrapper">
+  <div id="content">
+    <!--this is the dynamic content-->
+  </div>
+</div>
+<footer></footer>
+</body>
+</html>
