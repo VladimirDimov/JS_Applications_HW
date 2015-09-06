@@ -1,7 +1,7 @@
 # Web Storages homework
 
 ## 1.	The Ship game
-
+========================
 ### Task description
 
 *	The computer generates a random number with four different digits
