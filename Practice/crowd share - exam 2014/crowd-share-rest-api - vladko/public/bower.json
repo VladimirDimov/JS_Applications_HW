@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "sha1": "http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"
+    "sha1": "http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js",
+    "toastr": "~2.1.2"
   }
 }
