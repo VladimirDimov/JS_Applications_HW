@@ -8,8 +8,10 @@ loginControler = (function () {
 					$('#btn-register').on('click', function() {
 						var user = {
 							username: $('#tb-username').val(),
-							passHash: CryptoJS.SHA1($('#tb-password').val()).toString()
+							authCode: CryptoJS.SHA1($('#tb-password').val()).toString()
 						}
+						
+						validator.validateStringLength(user.username, 6, 40, 'username');
 						
 						services.user.register(user)
 							.then(function(res) {
@@ -17,23 +19,24 @@ loginControler = (function () {
 								context.redirect('#/');
 							})
 							.catch(function(err) {
-								toastr.error('Unsuccessful registration!\n' + err.responseText);
+								toastr.error('Unsuccessful registration!\n' + errorControler.formatError(err));
 							});
 					});
 					
 					$('#btn-login').on('click', function() {
 						var user = {
 							username: $('#tb-username').val(),
-							passHash: CryptoJS.SHA1($('#tb-password').val()).toString()
+							authCode: CryptoJS.SHA1($('#tb-password').val()).toString()
 						}
 						
 						services.user.login(user)
 							.then(function(res) {
+								services.user.setCurrent(res);
 								toastr.success('User successfully logged in!');
 								context.redirect('#/');
 							})
 							.catch(function(err) {
-								toastr.error('Unsuccessful login!\n' + err.responseText);
+								toastr.error('Unsuccessful login!\n' + errorControler.formatError(err));
 							});
 					});
 				})

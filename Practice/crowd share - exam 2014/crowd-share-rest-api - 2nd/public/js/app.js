@@ -8,6 +8,8 @@ var sammyApp = new Sammy('#content', function() {
 	this.get('#/login', loginControler.loginOrRegister);
 	
 	this.get('#/logout', logoutControler.logout);
+	
+	this.get('#/posts', postsControler.getAll);
 
 });
 

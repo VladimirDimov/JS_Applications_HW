@@ -16,6 +16,7 @@
 				<small>Title</small>
 				</h1>
 			<form class="form-inline col-md-15 pull-right" id="container-sign-in">
+				<p id="current-user"></p>
 				<a id="btn-sign-in" class="btn btn-default" href="#/login">Log in / Register</a>
 				<a id="btn-sign-out" class="btn btn-default" href="#/logout">Log out</a>
 			</form>
@@ -41,13 +42,16 @@
 	<script src="bower_components/sha1/index.js"></script>
 	
 	<!--controlers-->
-	<script src="controlers/homeControler.js"></script>
-	<script src="controlers/loginControler.js"></script>
+	<script src="js/controlers/homeControler.js"></script>
+	<script src="js/controlers/loginControler.js"></script>
+	<script src="js/controlers/logoutControler.js"></script>
 	
 	<!-- Internal -->
 	<script src="js/templates.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/services.js"></script>
+	<script src="js/controlers/errorControler.js"></script>
+	<script src="js/validator.js"></script>
 </body>
 
 </html>

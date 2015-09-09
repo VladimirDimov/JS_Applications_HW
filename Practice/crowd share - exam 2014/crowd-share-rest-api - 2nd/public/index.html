@@ -1,38 +1,62 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
+
 <head>
-    <title>Telerik Academy Courses</title>
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/site.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Template</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="bower_components/toastr/toastr.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
-<body ng-app="app">
-<header class="nav navbar">
-    <div class="container">
-        <h1 class="text-center">JS Apps Crowd Sharing</h1>
-    </div>
-</header>
+
+<body>
+	<header class="container">
+		<div class="row">
+			<h1 class="page-header col-md-6 pull-left">Title
+				<small>Title</small>
+				</h1>
+			<form class="form-inline col-md-15 pull-right" id="container-sign-in">
+				<p id="current-user"></p>
+				<a id="btn-sign-in" class="btn btn-default" href="#/login">Log in / Register</a>
+				<a id="btn-sign-out" class="btn btn-default" href="#/logout">Log out</a>
+			</form>
+		</div>
+		<nav class="navbar navbar-default row">
+			<ul class="nav navbar-nav col-md-8">
+				<li><a href="#/">Home</a></li>
+				<li><a href="#/posts">Posts</a></li>
+				<li><a href="#/events">Events</a></li>
+				<li><a href="#/users">Users</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="content" class="main">
+		<!--Content-->
+	</div>
+	<!-- Libraries -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/handlebars/handlebars.js"></script>
+	<script src="bower_components/sammy/lib/sammy.js"></script>
+	<script src="bower_components/sha1/index.js"></script>
+	<script src="bower_components/toastr/toastr.js"></script>
+	<script src="bower_components/sha1/index.js"></script>
+	
+	<!--helpers-->
+	<script src="js/helpers.js"></script>
+	
+	<!--controlers-->
+	<script src="js/controlers/homeControler.js"></script>
+	<script src="js/controlers/loginControler.js"></script>
+	<script src="js/controlers/logoutControler.js"></script>
+	<script src="js/controlers/postsControler.js"></script>
+	
+	<!-- Internal -->
+	<script src="js/templates.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controlers/errorControler.js"></script>
+	<script src="js/validator.js"></script>
 </body>
-<section class="container text-center">
-    <h2 id="total-posts">Last 100 posts:</h2>
-    <div id="posts">
 
-    </div>
-</section>
-<footer>
-    <h4 class="text-center">
-        &copy; Telerik Academy 2014
-    </h4>
-</footer>
-<script src="js/jquery-2.1.1.min.js"></script>
-<script>
-    $.get('/post')
-            .then(function(result) {
-                var totalPosts = result.length;
-                var $postsContainer = $('#posts');
-
-                for (var i = 0; i < totalPosts; i++) {
-                    var currentPost = result[i];
-                    var well = $('<div />').addClass('well').text(currentPost.title + ': "' + currentPost.body + '" by ' + currentPost.user.username).appendTo('#posts');
-                }
-            });
-</script>
 </html>

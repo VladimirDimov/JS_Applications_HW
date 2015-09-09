@@ -2,7 +2,7 @@ var services = (function () {
 	var user = {
 		register: function (user) {
 			var promise = new Promise(function (resolve, reject) {
-				var url = 'api/users';
+				var url = 'user';
 
 				$.ajax(url, {
 					type: 'POST',
@@ -22,10 +22,10 @@ var services = (function () {
 
 		login: function (user) {
 			var promise = new Promise(function (resolve, reject) {
-				var url = 'api/users';
+				var url = 'auth';
 
 				$.ajax(url, {
-					method: 'PUT',
+					method: 'POST',
 					contentType: 'application/json',
 					data: JSON.stringify(user),
 					success: function (res) {

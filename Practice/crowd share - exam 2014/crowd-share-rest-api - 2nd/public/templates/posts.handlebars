@@ -1,0 +1,24 @@
+<p>Posts: </p>
+<div id="fm-add-post" class="form pannel-default">
+	<input id="tb-title" type="text" placeholder="Title" class="form-control">
+	<input id="tb-body" type="text" placeholder="Body" class="form-control">
+	<button id="btn-add" class="button button-default">Add</button>
+</div>
+<div id="fm-add-post" class="form pannel-default">
+	<input id="tb-byUser" type="text" placeholder="Username" class="form-control">
+	<input id="tb-byPattern" type="text" placeholder="Pattern" class="form-control">
+	<button id="btn-filter" class="button button-default">Filter</button>
+</div>
+<div>
+	<button id="btn-sortByTitle" class="button button-default">Sort by title</button>
+	<button id="btn-sortByDate" class="button button-default">Sort by date</button>
+</div>
+<div id="form" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	{{#each this}}
+		<div class="panel panel-default">
+		<p>Title: {{title}}</p>
+		<p>Posted on: {{dateFormatted}} by {{user.username}}</p>
+		<p>Text: {{body}}</p>
+		</div>
+	{{/each}}
+</div>
