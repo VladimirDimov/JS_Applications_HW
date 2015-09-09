@@ -83,57 +83,43 @@
       "username": "vladko",
       "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
       "usernameLower": "vladko",
-      "authKey": "undefined%j^_(#+(lRWgjp&BHLJHqcim=Zu-suhloFN&hvYx@UY+d#Rvntn",
-      "id": "6687d7be-2fc1-4250-83b9-5cb25996740f"
+      "authKey": "undefinedTnnsl*Tn!cEXxbptVbkhjUA++dzG$$)QR%$@Zv)LmVqL-^qlH=z",
+      "id": "e6555b06-8a7e-4136-b293-e2c4b8ac35b7",
+      "todos": [
+        {
+          "id": 612667,
+          "text": "asdfasf",
+          "state": false,
+          "category": "pesho"
+        },
+        {
+          "id": 663359,
+          "text": "asdfasf",
+          "state": true,
+          "category": "pesho"
+        },
+        {
+          "id": 672297,
+          "text": "seafasfasf",
+          "state": false,
+          "category": "asd"
+        }
+      ]
     },
     {
-      "username": "pesho1",
+      "username": "pesho",
       "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
-      "usernameLower": "pesho1",
-      "authKey": "undefinedmQvPijXaaATxso)RbjUitr*DdMnnLNs#L#npGth!goNLiCrI=dz",
-      "id": "5065c55b-a6dc-4d28-b331-9d67499e6c70"
-    },
-    {
-      "username": "pesho2",
-      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
-      "usernameLower": "pesho2",
-      "authKey": "undefined_)MNt!$(iZBf(_q-&F%oYSoEjFwa*g%-jxbfpv^JxXF#tVNusuE",
-      "id": "a951a419-daa1-44c1-a9d8-4c8ad4a13879"
-    },
-    {
-      "username": "pesho3",
-      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
-      "usernameLower": "pesho3",
-      "authKey": "undefined@zAaYT$+cRba&uac)dzF)WOV!QGyN$ccwuK)CWZqTy+fOeEN!dl",
-      "id": "7195e03d-2f0a-4cec-a7c7-0a089eb926d2"
-    },
-    {
-      "username": "vladko1",
-      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
-      "usernameLower": "vladko1",
-      "authKey": "undefinedIyMnIRSeg*cIhiMAf#asv%-(WyWUJ@*zku@AzExe!lCzE&trI!i",
-      "id": "c0da3f5a-eac8-4340-8f75-9867df8b30d4"
-    },
-    {
-      "username": "vladko2",
-      "passHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-      "usernameLower": "vladko2",
-      "authKey": "undefinedUxktuzGbGTkax@B_zuFqh#kDmfLb!LXRJiy(NlGZo@XHRBn!IMs",
-      "id": "44d62317-2fd0-40ee-94e3-381296c977b6"
-    },
-    {
-      "username": "vladko3",
-      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
-      "usernameLower": "vladko3",
-      "authKey": "undefinedC_HQ*B(eP$m-&_r$!sm^-n+zDiC%cfHr*DkmfKOf*bL$vo+wA_Q",
-      "id": "7ff2b084-5860-41e4-8496-4fac1c437113"
-    },
-    {
-      "username": "vladko4",
-      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
-      "usernameLower": "vladko4",
-      "authKey": "undefinedFFahtxn-DP%rdNkIH&iQ+M=LWjsOYOAJ%eB))rQC$Xgk@F#QYjP",
-      "id": "026354d2-d3c1-4d81-baf9-5ed2183dd9d2"
+      "usernameLower": "pesho",
+      "authKey": "undefinedqfPSAI#aE*Pxm-PM^kGAPhIuHrPC^t+juxymulKyOcf&ymEuByR",
+      "id": "a58a6dad-6a57-4d0f-8a8d-ef0145cc56f8",
+      "todos": [
+        {
+          "id": 664415,
+          "text": "Hello",
+          "state": true,
+          "category": "work"
+        }
+      ]
     }
   ]
 }

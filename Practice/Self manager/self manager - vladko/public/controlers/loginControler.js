@@ -1,9 +1,9 @@
 loginControler = (function () {
 	return {
-		login: function (context) {
+		loginOrRegister: function (context) {
 			templates.get('login')
 				.then(function (template) {
-					helpers.loadContent(template());
+					context.$element().html(template());
 					
 					$('#btn-register').on('click', function() {
 						var user = {
@@ -13,10 +13,11 @@ loginControler = (function () {
 						
 						services.user.register(user)
 							.then(function(res) {
-								toastr.success('User registered');
+								toastr.success('User successfully registered');
+								context.redirect('#/');
 							})
 							.catch(function(err) {
-								toastr.error('Unsuccessful registration')
+								toastr.error('Unsuccessful registration!\n' + err.responseText);
 							});
 					});
 					
@@ -28,10 +29,12 @@ loginControler = (function () {
 						
 						services.user.login(user)
 							.then(function(res) {
-								toastr.success('User logged in');
+								toastr.success('User successfully logged in!');
+								services.user.setCurrent(res.result);
+								context.redirect('#/');
 							})
 							.catch(function(err) {
-								toastr.error('Unsuccessful login')
+								toastr.error('Unsuccessful login!\n' + err.responseText);
 							});
 					});
 				})

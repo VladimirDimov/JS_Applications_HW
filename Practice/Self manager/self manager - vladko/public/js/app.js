@@ -1,16 +1,20 @@
-var sammyApp = new Sammy('#content', function () {
-	this.get('#/', function (context) {
+var sammyApp = new Sammy('#content', function() {
+	this.get('#/', function(context) {
 		context.redirect('#/home');
 	});
 
-	this.get('#/home', function (context) {
-		homeControler.home(context)
-	});
-	
-	this.get('#/login', function(context) {
-		loginControler.login(context);
-	})
-	
+	this.get('#/home', homeControler.home);
+
+	this.get('#/login', loginControler.loginOrRegister);
+
+	this.get('#/logout', logoutConroler.logout)
+
+	this.get('#/todos/get/all', todosControler.get.all);
+
+	this.get('#/todos/add', todosControler.add);
+
 });
 
-sammyApp.run('#/');
+$(function() {
+	sammyApp.run('#/');
+});

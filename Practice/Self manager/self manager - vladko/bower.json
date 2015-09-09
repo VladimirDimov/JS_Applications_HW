@@ -1,9 +1,8 @@
 {
-  "name": "vouchers-app",
+  "name": "frameworks",
   "version": "0.0.0",
-  "homepage": "https://github.com/telerikacademy/javascript-applications",
   "authors": [
-    "Doncho Minkov <DonchoMinkov@gmail.com>"
+    "Batman"
   ],
   "license": "MIT",
   "ignore": [
@@ -15,15 +14,11 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "cryptojslib": "~3.1.2",
-    "handlebars": "~4.0.0",
+    "handlebars": "~4.0.2",
     "jquery": "~2.1.4",
-    "jquery-ui": "jqueryui#~1.11.4",
-    "jt.timepicker": "jquery-timepicker-jt#~1.8.1",
-    "lodash": "~3.10.1",
-    "moment": "~2.10.6",
     "sammy": "~0.7.6",
     "sha1": "http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js",
-    "toastr": "~2.1.2"
+    "toastr": "~2.1.2",
+    "underscore": "~1.8.3"
   }
 }

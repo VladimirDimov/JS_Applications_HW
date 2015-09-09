@@ -1,0 +1,15 @@
+<h1>TODOs:</h1>
+<a id="lk-todos-add" href="#/todos/add">Add new todo</a>
+{{#if this}}
+{{#each this}}
+<div class"jumbotron">
+	<input class="chb-state" type="checkbox" data="{{id}}" {{#if this.state}}checked{{/if}}>
+	{{this.state}}
+	<h2>ID:{{id}}</h2>
+	<h2>Category:{{category}}</h2>
+	<h3>{{text}}</h2>
+</div>
+{{/each}}
+{{else}}
+<h1>There are no todos currently</h1>
+{{/if}}
