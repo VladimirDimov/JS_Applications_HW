@@ -1,0 +1,36 @@
+<nav id="pannel-user-options" class="navbar navbar-default row user-options">
+	<ul class="nav navbar-nav col-md-8">
+		<li><a href="#/cookies/add">Add cookie</a></li>
+		<li><a href="#/cookies/view">All cookies</a></li>
+		<li><a href="#/cookies/my-cookie">Fortune cookie</a></li>
+	</ul>
+</nav>
+<button id="btn-sort-by-likes">Sort by likes</button>
+<button id="btn-sort-by-date">Sort by share date</button>
+<input id="tb-filter-category" type="text" placeholder="Filter by category">
+<button id="btn-filter-by-category">Filter by category</button>
+<hr>
+<div class="panel-group">
+	{{#each this}}
+	<div class="cookie-container panel panel-default">
+		<div class="panel-heading">
+			<h2>Category: {{category}}</h2>
+		</div>
+		<div class="img-container">
+			<img src="{{img}}" alt="">
+		</div>
+		<div class="panel-body">
+			<p>Likes: {{likes}}</p>
+			<p>Dislikes: {{dislikes}}</p>
+			<p>Hours: {{hours}}</p>
+			<p>Share Date: {{shareDateFormatted}}</p>
+			<p>Text: {{text}}</p>
+			<div>
+				<button class="btn-like" data-id="{{id}}">Like</button>
+				<button class="btn-dislike" data-id="{{id}}">Dislike</button>
+				<button class="btn-reshare" data-id="{{id}}">Reshare</button>
+			</div>
+		</div>		
+	</div>
+	{{/each}}
+</div>
